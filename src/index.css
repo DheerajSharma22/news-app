@@ -1,13 +1,138 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.navbar {
+  z-index: 1;
+}
+.modal-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.modal-container {
+  width: 50vw;
+  background-color: #2f2f2f;
+  border-radius: 0.5rem;
+  /* padding: 1rem; */
+}
+
+.modal-header {
+  padding: 1.2rem;
+  color: #e5e5e5;
+  border-bottom: 1px solid #aaaccc;
+}
+.modal-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.modal-body {
+  padding: 1.2rem;
+  color: #e5e5e5;
+  border-bottom: 1px solid #aaaccc;
+}
+
+.modal-img {
+  width: 100%;
+  height: 40vh;
+  margin-bottom: 1rem;
+}
+
+.modal-footer {
+  text-align: left;
+  padding: 1.2rem;
+}
+
+.resultsCard {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* height: 300px; */
+  box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.1), 1px 1px 5px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  margin-top: 2rem;
+  gap: 2rem;
+  border-radius: 0.5rem;
+}
+.resultsCard img {
+  /* width: 250px; */
+  height: 200px;
+  border-radius: 0.5rem;
+}
+.resultCardCat {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.resultCardTitle {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.dateAuthor {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(255, 136, 0);
+}
+
+.resultCardDesc {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2f2f2f;
+}
+
+.resultCardBtn {
+  border: 1px solid rgb(255, 136, 0);
+  padding: 0.5rem 2rem;
+  color: rgb(255, 136, 0);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  margin-top: 20rem;
+}
+
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  display: grid;
+}
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  --c: radial-gradient(farthest-side, #766df4 92%, #0000);
+  background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+    var(--c) 0 50%;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  animation: s2 1s infinite;
+}
+.spinner::before {
+  margin: 4px;
+  filter: hue-rotate(45deg);
+  background-size: 8px 8px;
+  animation-timing-function: linear;
+}
+
+@keyframes s2 {
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
+
+
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  .modal-container {
+    width: 90%;
+  }
 }
